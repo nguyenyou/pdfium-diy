@@ -1,5 +1,5 @@
 em++ $(ls *.cpp) \
-  /build/pdfium/out/prod/obj/libpdfium.a \
+  ../pdfium/out/prod/obj/libpdfium.a \
   -g \
   -v \
   -sEXPORT_ES6=1 \
@@ -14,8 +14,8 @@ em++ $(ls *.cpp) \
   -sEXPORTED_RUNTIME_METHODS=$(cat ./exported-runtime-methods.txt) \
   -sEXPORTED_FUNCTIONS=$(cat ./exported-functions.txt) \
   -lpdfium \
-  -L/build/pdfium/out/prod/obj \
-  -I/build/pdfium/public \
+  -L../pdfium/out/prod/obj \
+  -I../pdfium/public \
   -std=c++11 \
   -Wall \
   --no-entry \

@@ -20,4 +20,10 @@ git clone https://github.com/emscripten-core/emsdk.git
 cd emsdk && ./emsdk install latest && ./emsdk activate latest
 source ./emsdk_env.sh
 which emcc && emcc --version
+cd .. && mkdir -p wasm
+cp code/cpp/*.h wasm/ && cp code/cpp/*.cpp wasm/
+cp compile.sh wasm/
+cp exported-runtime-methods.txt wasm/exported-runtime-methods.txt
+cp exported-functions.txt wasm/exported-functions.txt
+chmod +x wasm/compile.sh
 ```
