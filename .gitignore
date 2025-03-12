@@ -1,0 +1,11 @@
+# Ignore everything
+/*
+
+# Except the code folder
+!code/
+!patch/
+!.gitignore
+!compile.sh
+!exported-functions.txt
+!exported-runtime-methods.txt
+!README.md
