@@ -37,7 +37,7 @@ echo 'target_cpu="wasm"' >> out/prod/args.gn
 ninja -C out/prod pdfium -v
 cd ..
 git clone https://github.com/emscripten-core/emsdk.git
-cd emsdk && ./emsdk install latest && ./emsdk activate latest
+cd emsdk && ./emsdk install 3.1.70 && ./emsdk activate 3.1.70
 source ./emsdk_env.sh
 which emcc && emcc --version
 cd .. && mkdir -p wasm
@@ -48,6 +48,12 @@ cp exported-functions.txt wasm/exported-functions.txt
 chmod +x wasm/compile.sh
 cd wasm
 source ../emsdk/emsdk_env.sh && ./compile.sh
+echo "Size of pdfium.wasm:"
+ls -lh pdfium.wasm | awk '{print $5}'
+echo "Size of pdfium.js:"
+ls -lh pdfium.js | awk '{print $5}'
+
+# Optional
 cd .. && mkdir -p dist
 cp wasm/pdfium.js dist/pdfium.js
 cp wasm/pdfium.wasm dist/pdfium.wasm
