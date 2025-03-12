@@ -15,4 +15,9 @@ gn gen out/prod --args='is_debug=false treat_warnings_as_errors=false pdf_use_sk
 echo 'target_os="wasm"' >> out/prod/args.gn
 echo 'target_cpu="wasm"' >> out/prod/args.gn
 ninja -C out/prod pdfium -v
+cd ..
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk && ./emsdk install latest && ./emsdk activate latest
+source ./emsdk_env.sh
+which emcc && emcc --version
 ```
