@@ -26,4 +26,9 @@ cp compile.sh wasm/
 cp exported-runtime-methods.txt wasm/exported-runtime-methods.txt
 cp exported-functions.txt wasm/exported-functions.txt
 chmod +x wasm/compile.sh
+cd wasm
+source ../emsdk/emsdk_env.sh && ./compile.sh
+cd .. && mkdir -p dist
+cp wasm/pdfium.js dist/pdfium.js
+cp wasm/pdfium.wasm dist/pdfium.wasm
 ```
