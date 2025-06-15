@@ -66,11 +66,14 @@ git clone https://github.com/emscripten-core/emsdk.git
 cd emsdk && ./emsdk install 3.1.70 && ./emsdk activate 3.1.70
 source ./emsdk_env.sh
 which emcc && emcc --version
+```
+
+```sh
 cd .. && mkdir -p wasm
-cp code/cpp/*.h wasm/ && cp code/cpp/*.cpp wasm/
-cp compile.sh wasm/
-cp exported-runtime-methods.txt wasm/exported-runtime-methods.txt
-cp exported-functions.txt wasm/exported-functions.txt
+cp pdfium-diy/code/cpp/*.h wasm/ && cp pdfium-diy/code/cpp/*.cpp wasm/
+cp pdfium-diy/compile.sh wasm/
+cp pdfium-diy/exported-runtime-methods.txt wasm/exported-runtime-methods.txt
+cp pdfium-diy/exported-functions.txt wasm/exported-functions.txt
 chmod +x wasm/compile.sh
 cd wasm
 source ../emsdk/emsdk_env.sh && ./compile.sh
