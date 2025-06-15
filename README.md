@@ -58,6 +58,9 @@ Then, run
 echo 'target_os="wasm"' >> out/prod/args.gn
 echo 'target_cpu="wasm"' >> out/prod/args.gn
 ninja -C out/prod pdfium -v
+```
+
+```sh
 cd ..
 git clone https://github.com/emscripten-core/emsdk.git
 cd emsdk && ./emsdk install 3.1.70 && ./emsdk activate 3.1.70
