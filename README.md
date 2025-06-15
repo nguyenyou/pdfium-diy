@@ -22,9 +22,16 @@ $ export PATH="$PATH:/path/to/depot_tools"
 
 ## Commands
 
+First get the source
+
 ```sh
 gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
 gclient sync -r origin/chromium/6815 --no-history --shallow
+```
+
+Now apply the patch
+
+```sh
 cp patch/BUILD.gn pdfium/BUILD.gn
 cp patch/build/config/BUILDCONFIG.gn pdfium/build/config/BUILDCONFIG.gn
 mkdir -p pdfium/build/toolchain/wasm/
