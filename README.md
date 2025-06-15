@@ -32,6 +32,7 @@ gclient sync -r origin/chromium/6815 --no-history --shallow
 Now apply the patch
 
 ```sh
+git clone git@github.com:nguyenyou/pdfium-diy.git
 cp pdfium-diy/patch/BUILD.gn pdfium/BUILD.gn
 cp pdfium-diy/patch/build/config/BUILDCONFIG.gn pdfium/build/config/BUILDCONFIG.gn
 mkdir -p pdfium/build/toolchain/wasm/
