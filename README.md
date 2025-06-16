@@ -11,7 +11,7 @@ https://developer.apple.com/xcode/
 Step 2: Install
 
 ```sh
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
 ```
 
 Assuming you cloned depot_tools to /path/to/depot_tools (note: you must use the absolute path or Python will not be able to find infra tools):
