@@ -17,13 +17,13 @@ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 Assuming you cloned depot_tools to /path/to/depot_tools (note: you must use the absolute path or Python will not be able to find infra tools):
 
 ```sh
-$ export PATH="$PATH:/path/to/depot_tools"
+export PATH="$PATH:/path/to/depot_tools"
 ```
 
 Check the setup:
 
 ```sh
-$ which gclient
+which gclient
 ```
 
 ## Commands
@@ -31,6 +31,7 @@ $ which gclient
 First get the source
 
 ```sh
+mkdir path/to/your-pdfium && cd path/to/your-pdfium
 gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
 gclient sync -r origin/chromium/6815 --no-history --shallow
 ```
