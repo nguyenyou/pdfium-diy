@@ -20,6 +20,12 @@ Assuming you cloned depot_tools to /path/to/depot_tools (note: you must use the 
 $ export PATH="$PATH:/path/to/depot_tools"
 ```
 
+Check the setup:
+
+```sh
+$ which gclient
+```
+
 ## Commands
 
 First get the source
