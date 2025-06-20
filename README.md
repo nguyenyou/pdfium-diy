@@ -36,7 +36,14 @@ gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
 gclient sync -r origin/chromium/6815 --no-history --shallow
 ```
 
-Now apply the patch
+Now apply the patchs:
+
+We need to patch these files:
+- pdfium/BUILD.gn
+- pdfium/build/config/BUILDCONFIG.gn
+- pdfium/core/fxge/BUILD.gn
+We need to create a new folder `pdfium/build/toolchain/wasm` and add new file `BUILD.gn`:
+- pdfium/build/toolchain/wasm/BUILD.gn
 
 ```sh
 git clone git@github.com:nguyenyou/pdfium-diy.git
