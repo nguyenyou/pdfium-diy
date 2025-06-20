@@ -39,9 +39,16 @@ gclient sync -r origin/chromium/6815 --no-history --shallow
 Now apply the patches:
 
 We need to patch these files:
-- pdfium/BUILD.gn
-- pdfium/build/config/BUILDCONFIG.gn
-- pdfium/core/fxge/BUILD.gn
+
+### pdfium/BUILD.gn
+
+### pdfium/build/config/BUILDCONFIG.gn
+
+### pdfium/core/fxge/BUILD.gn
+
+Add `is_wasm` to `if (is_linux || is_chromeos) {`
+
+### pdfium/build/toolchain/wasm/BUILD.gn
 
 We need to create a new folder `pdfium/build/toolchain/wasm` and add new file `BUILD.gn`:
 - pdfium/build/toolchain/wasm/BUILD.gn
