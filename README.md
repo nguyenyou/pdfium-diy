@@ -62,8 +62,6 @@ else if (current_os == "emscripten") {
 }
 ```
 
-### pdfium/build/config/BUILDCONFIG.gn
-
 ### pdfium/core/fxge/BUILD.gn
 
 Add `is_wasm` to `if (is_linux || is_chromeos) {`
