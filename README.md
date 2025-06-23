@@ -62,6 +62,14 @@ else if (current_os == "emscripten") {
 }
 ```
 
+Find the `if (current_os != "aix") {` and replace with:
+
+```
+if (current_os != "aix" && current_os != "emscripten") {
+...
+}
+```
+
 ### pdfium/core/fxge/BUILD.gn
 
 Add `is_wasm` to `if (is_linux || is_chromeos) {`
