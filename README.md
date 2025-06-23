@@ -90,6 +90,19 @@ if (is_posix || is_wasm) {
 }
 ```
 
+### pdfium/build/config/wasm/BUILD.gn
+Create this new file:
+
+```
+config("compiler") {
+  defines = [
+    # Enable fseeko() and ftello() (required by libopenjpeg20)
+    # https://github.com/emscripten-core/emscripten/issues/4932
+    "_POSIX_C_SOURCE=200112",
+  ]
+}
+```
+
 ### pdfium/build/toolchain/wasm/BUILD.gn
 
 We need to create a new folder `pdfium/build/toolchain/wasm` and add new file `BUILD.gn`:
