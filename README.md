@@ -52,6 +52,18 @@ else if (target_os == "emscripten") {
 }
 ```
 
+### pdfium/build/config/compiler/BUILD.gn
+
+Find the `config("compiler") {` and add this:
+
+```
+else if (current_os == "emscripten") {
+  configs += [ "//build/config/wasm:compiler" ]
+}
+```
+
+### pdfium/build/config/BUILDCONFIG.gn
+
 ### pdfium/core/fxge/BUILD.gn
 
 Add `is_wasm` to `if (is_linux || is_chromeos) {`
