@@ -56,6 +56,22 @@ else if (target_os == "emscripten") {
 
 Add `is_wasm` to `if (is_linux || is_chromeos) {`
 
+```
+if (is_linux || is_chromeos || is_wasm) {
+  ...
+}
+```
+
+### pdfium/core/fxcrt/BUILD.gn
+
+Add `is_wasm` to `if (is_posix) {`
+
+```
+if (is_posix || is_wasm) {
+  ...
+}
+```
+
 ### pdfium/build/toolchain/wasm/BUILD.gn
 
 We need to create a new folder `pdfium/build/toolchain/wasm` and add new file `BUILD.gn`:
