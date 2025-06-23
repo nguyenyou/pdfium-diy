@@ -44,6 +44,14 @@ We need to patch these files:
 
 ### pdfium/build/config/BUILDCONFIG.gn
 
+Update this 
+
+```
+else if (target_os == "emscripten") {
+  _default_toolchain = "//build/toolchain/wasm:$target_cpu"
+}
+```
+
 ### pdfium/core/fxge/BUILD.gn
 
 Add `is_wasm` to `if (is_linux || is_chromeos) {`
