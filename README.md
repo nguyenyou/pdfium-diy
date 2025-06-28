@@ -36,6 +36,13 @@ gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
 gclient sync -r origin/chromium/6815 --no-history --shallow
 ```
 
+Or
+
+```
+gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git --custom-var checkout_configuration=minimal
+echo "target_os = [ 'emscripten' ]" >> .gclient
+```
+
 Now apply the patches:
 
 We need to patch these files:
