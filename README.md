@@ -41,6 +41,7 @@ Or
 ```
 gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git --custom-var checkout_configuration=minimal
 echo "target_os = [ 'emscripten' ]" >> .gclient
+gclient sync -r "origin/main" --no-history --shallow
 ```
 
 Now apply the patches:
