@@ -52,7 +52,7 @@ solutions = [
     "managed"     : False,
     "custom_deps" : {
     },
-    "custom_vars": {},
+    "custom_vars": {'checkout_configuration': 'minimal'},
   },
 ]
 target_os = [ 'emscripten' ]
