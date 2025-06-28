@@ -28,12 +28,11 @@ which gclient
 
 ## Commands
 
-First get the source
+### Init `.gclient` file
 
 ```sh
 mkdir path/to/your-pdfium && cd path/to/your-pdfium
 gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git
-gclient sync -r origin/chromium/6815 --no-history --shallow
 ```
 
 Or
@@ -41,7 +40,6 @@ Or
 ```
 gclient config --unmanaged https://pdfium.googlesource.com/pdfium.git --custom-var checkout_configuration=minimal
 echo "target_os = [ 'emscripten' ]" >> .gclient
-gclient sync -r "origin/main" --no-history --shallow
 ```
 
 Basically those commands are for creating the `.gclient` file:
@@ -59,6 +57,20 @@ solutions = [
 ]
 target_os = [ 'emscripten' ]
 ```
+
+### Clone source
+
+```
+gclient sync -r origin/chromium/6815 --no-history --shallow
+```
+
+or
+
+```
+gclient sync -r "origin/main" --no-history --shallow
+```
+
+### Patch source
 
 Now apply the patches:
 
