@@ -44,6 +44,22 @@ echo "target_os = [ 'emscripten' ]" >> .gclient
 gclient sync -r "origin/main" --no-history --shallow
 ```
 
+Basically those commands are for creating the `.gclient` file:
+
+```
+solutions = [
+  { "name"        : 'pdfium',
+    "url"         : 'https://pdfium.googlesource.com/pdfium.git',
+    "deps_file"   : 'DEPS',
+    "managed"     : False,
+    "custom_deps" : {
+    },
+    "custom_vars": {},
+  },
+]
+target_os = [ 'emscripten' ]
+```
+
 Now apply the patches:
 
 We need to patch these files:
